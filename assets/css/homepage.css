@@ -1,0 +1,305 @@
+/* search */
+.img-bg {
+  position: relative;
+  max-width: 1240px;
+}
+
+.img-bg > img {
+  width: 100%;
+  max-height: 500px;
+}
+
+.img-bg > .img-title {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  color: #24201d;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.img-bg > .search-box {
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.kotaTujuan {
+  max-width: 543px;
+}
+
+.form-control,
+.form-select {
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #3c3e95;
+  padding-left: 50px;
+  color: #24201d;
+}
+
+.input-icon {
+  left: 25px;
+}
+
+.line {
+  height: 100px;
+}
+
+.durasi {
+  width: 100%;
+}
+.checkIn label[for='datepicker'] {
+  width: 100%;
+}
+.vr {
+  width: 3px;
+  height: 80px;
+  background: #bfbfbf;
+  border-radius: 2px;
+}
+
+#checkOutValue {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #24201d;
+}
+
+.tamuDanKamar {
+  max-width: 370px;
+  width: 100%;
+}
+
+#tamuDanKamar {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
+.select-box {
+  max-width: 370px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  margin-top: 2px;
+  border-color: rgba(67, 67, 67, 0.17);
+  border-radius: 6px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: rgb(27 27 27 / 20%) 0px 1px 3px 0px,
+    rgb(27 27 27 / 10%) 0px 4px 8px 0;
+  display: none;
+  flex-direction: column;
+}
+.btn-search {
+  background-color: #3c3e95;
+  border-radius: 0.75rem;
+  padding: 23px;
+}
+
+/* counter */
+.input-counter:read-only {
+  background-color: #fff;
+}
+.input-counter {
+  max-width: 40px;
+  padding: 0;
+  text-align: center;
+}
+.btn-counter {
+  background-color: rgba(247, 249, 250, 1);
+}
+
+/* recommendation */
+
+.recommendation h2 {
+  color: #24201d;
+}
+.recommendation .sub-title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.recommendation .box {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.recommendation .box .img-fluid {
+  border-radius: 10px;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 38.75%
+  );
+}
+.img-fluid {
+  object-fit: cover;
+  width: 100%;
+}
+.box.selected {
+  border: 2px solid #3a8375;
+  transform: translateY(-10px);
+}
+.img-container {
+  max-height: 224px;
+}
+.img-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 38.75%
+  );
+}
+.img-container > img {
+  object-fit: cover;
+  width: 100%;
+  height: 224px;
+}
+.hotel-link {
+  text-decoration: none;
+}
+
+.hotel-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: '';
+  background-color: transparent;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 350px) and (max-width: 768px) {
+  .navbar-brand > img {
+    width: 120px;
+  }
+  .navbar.pb-50 {
+    padding-bottom: 30px;
+  }
+  .btn.btn-sign-in.text-lg,
+  .btn.btn-sign-up.text-lg {
+    font-size: 0.875rem;
+    padding: 5px 18px;
+  }
+  .vr-sm,
+  .checkOut {
+    display: none;
+  }
+  .img-bg > .search-box {
+    width: 100%;
+    padding: 1.5rem 1.25rem;
+    position: relative;
+    bottom: auto;
+  }
+  .img-bg > .img-title,
+  .img-bg > img {
+    display: none;
+  }
+  .recommendation {
+    margin-top: 50px;
+  }
+  .kotaTujuan,
+  .tamuDanKamar {
+    max-width: 100%;
+  }
+  .select-box {
+    max-width: 82%;
+  }
+  .checkIn {
+    width: 100%;
+  }
+  .flex-xs-column {
+    flex-direction: column !important;
+  }
+  .btn-search {
+    padding: 10px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+@media (max-width: 768px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .vr-md,
+  .checkOut {
+    display: none;
+  }
+  .img-bg > .search-box {
+    width: 100%;
+    padding: 1.5rem 1.25rem;
+    position: relative;
+    bottom: auto;
+  }
+  .img-bg > .img-title,
+  .img-bg > img {
+    display: none;
+  }
+  .recommendation {
+    margin-top: 50px;
+  }
+  .kotaTujuan {
+    max-width: 100%;
+  }
+  .checkIn {
+    width: 100%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .img-bg > .search-box {
+    padding: 2.5rem;
+    width: 768px;
+    position: absolute;
+    bottom: calc(-391px / 2);
+  }
+  .img-bg > .img-title,
+  .img-bg > img {
+    display: block;
+  }
+  .recommendation {
+    margin-top: 240px;
+  }
+  .checkIn {
+    width: 100%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .vr-md,
+  .checkOut {
+    display: block;
+  }
+  .img-bg > .search-box {
+    padding: 2.5rem;
+    width: 1000px;
+  }
+  .durasi,
+  .checkIn {
+    max-width: 230px;
+  }
+  .kotaTujuan {
+    max-width: 543px;
+  }
+}

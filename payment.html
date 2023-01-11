@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NginepYuk</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/payment.css" />
+    <link rel="stylesheet" href="./assets/css/datepicker.css" />
+    <link rel="stylesheet" href="./assets/css/utilities.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preconnect"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light pt-lg-40 pb-lg-40 pt-30 pb-50"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../assets/images/logo.svg" alt="" />
+          </a>
+          <div class="d-flex flex-row" id="nav-right"></div>
+        </div>
+      </nav>
+    </section>
+    <section class="py-2 mb-50 text-center">
+      <ol class="stepper">
+        <li id="stepper1" class="active">1</li>
+        <li id="stepper2" class="">2</li>
+        <li id="stepper3" class="">3</li>
+      </ol>
+      <h1 class="fw-semibold text-4xl mb-0 mt-50 title">Informasi Booking</h1>
+    </section>
+    <section>
+      <div class="container-fluid">
+        <div class="row gap-lg-0 gap-4">
+          <div class="col-lg-7">
+            <div class="box" id="step1">
+              <h2 class="text-2xl fw-semibold mb-20">Detail Pemesan</h2>
+              <form action="">
+                <div class="mb-4">
+                  <label for="nama" class="form-label fw-semibold mb-10"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control fw-light text-sm"
+                    name="nama"
+                    id="nama"
+                    aria-describedby="nama"
+                    placeholder="Isi sesuai KTP/Paspor/SIM"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="phoneNumber" class="form-label fw-semibold mb-10"
+                    >Nomor Handphone</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control fw-light text-sm"
+                    name="phoneNumber"
+                    id="phoneNumber"
+                    aria-describedby="phoneNumber"
+                    placeholder="Nomor handphone"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="email" class="form-label fw-semibold mb-10"
+                    >Alamat Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control fw-light text-sm"
+                    name="email"
+                    id="email"
+                    aria-describedby="email"
+                    placeholder="email@example.com"
+                  />
+                </div>
+                <div class="d-flex flex-row justify-content-around">
+                  <div class="form-check d-flex flex-row align-items-center">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="namaPemesan"
+                      id="namaPemesan1"
+                      value="sama"
+                      checked
+                    />
+                    <label
+                      class="form-check-label text-sm ml-10"
+                      for="namaPemesan1"
+                    >
+                      Sama dengan pemesan
+                    </label>
+                  </div>
+                  <div class="form-check d-flex flex-row align-items-center">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="namaPemesan"
+                      id="namaPemesan2"
+                      value="orangLain"
+                    />
+                    <label
+                      class="form-check-label text-sm ml-10"
+                      for="namaPemesan2"
+                    >
+                      Saya memesan untuk orang lain
+                    </label>
+                  </div>
+                </div>
+                <div class="namaTamu d-none mt-4">
+                  <label for="namaTamu" class="form-label fw-semibold mb-10"
+                    >Nama lengkap tamu</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control fw-light text-sm"
+                    name="namaTamu"
+                    id="namaTamu"
+                    aria-describedby="namaTamu"
+                    placeholder="Nama lengkap tamu"
+                  />
+                </div>
+              </form>
+            </div>
+            <div id="step2" class="d-none">
+              <div class="box">
+                <h2 class="text-2xl fw-semibold mb-15">Kartu Kredit/Debit</h2>
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center mb-20 pointer opacity-50"
+                >
+                  <p class="mb-0">Kartu Kredit</p>
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/visa.svg"
+                      class="mr-15"
+                      height="20"
+                      alt="visa"
+                    />
+                    <img
+                      src="./assets/images/mastercard.svg"
+                      height="20"
+                      class="mr-15"
+                      alt="mastercard"
+                    />
+                    <img
+                      src="./assets/images/arrow-right-gray.svg"
+                      height="24"
+                      alt="arrow-right"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center pointer"
+                  id="debit"
+                >
+                  <p class="mb-0">Kartu Debit</p>
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/visa.svg"
+                      class="mr-15"
+                      height="20"
+                      alt="visa"
+                    />
+                    <img
+                      src="./assets/images/mastercard.svg"
+                      height="20"
+                      class="mr-15"
+                      alt="mastercard"
+                    />
+                    <img
+                      src="./assets/images/arrow-right-gray.svg"
+                      height="24"
+                      alt="arrow-right"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="box mt-30">
+                <h2 class="text-2xl fw-semibold mb-15">Virtual Account</h2>
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center mb-20 pointer opacity-50"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/bca.svg"
+                      class="mr-15"
+                      height="20"
+                      alt="visa"
+                    />
+                    <p class="mb-0">BCA Virtual Account</p>
+                  </div>
+
+                  <img
+                    src="./assets/images/arrow-right-gray.svg"
+                    height="24"
+                    alt="arrow-right"
+                  />
+                </div>
+
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center mb-20 pointer opacity-50"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/mandiri.svg"
+                      class="mr-15"
+                      height="20"
+                      alt="visa"
+                    />
+                    <p class="mb-0">Mandiri Virtual Account</p>
+                  </div>
+
+                  <img
+                    src="./assets/images/arrow-right-gray.svg"
+                    height="24"
+                    alt="arrow-right"
+                  />
+                </div>
+
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center mb-20 pointer opacity-50"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/bni.svg"
+                      class="mr-15"
+                      height="20"
+                      alt="visa"
+                    />
+                    <p class="mb-0">BNI Virtual Account</p>
+                  </div>
+
+                  <img
+                    src="./assets/images/arrow-right-gray.svg"
+                    height="24"
+                    alt="arrow-right"
+                  />
+                </div>
+
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center pointer opacity-50"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/briva.svg"
+                      class="mr-15"
+                      height="20"
+                      alt="visa"
+                    />
+                    <p class="mb-0">BRIVA</p>
+                  </div>
+
+                  <img
+                    src="./assets/images/arrow-right-gray.svg"
+                    height="24"
+                    alt="arrow-right"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="step3" class="d-none">
+              <div class="box">
+                <div class="mb-4">
+                  <label
+                    for="namaPemilikKartu"
+                    class="form-label fw-semibold mb-10"
+                    >Nama Pemilik Kartu</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control fw-light text-sm"
+                    name="namaPemilikKartu"
+                    id="namaPemilikKartu"
+                    aria-describedby="namaPemilikKartu"
+                    placeholder="Nama Pemilik Kartu"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label
+                    for="nomorKartuDebit"
+                    class="form-label fw-semibold mb-10"
+                    >Nomor Kartu Debit</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control fw-light text-sm"
+                    name="nomorKartuDebit"
+                    id="nomorKartuDebit"
+                    aria-describedby="nomorKartuDebit"
+                    placeholder="Nomor Kartu Debit"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  />
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="mr-15">
+                    <label for="month" class="form-label fw-semibold mb-10"
+                      >Berlaku Hingga</label
+                    >
+                    <div class="d-flex flex-row">
+                      <select
+                        class="form-select mr-10 fw-light text-sm"
+                        id="month"
+                        name="month"
+                      >
+                        <option value="" disabled selected>Bulan</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                      </select>
+                      <select
+                        class="form-select fw-light text-sm"
+                        id="year"
+                        name="year"
+                      >
+                        <option value="" disabled selected>Tahun</option>
+                        <option value="22">2022</option>
+                        <option value="23">2023</option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                        <option value="26">2026</option>
+                        <option value="27">2027</option>
+                        <option value="28">2028</option>
+                        <option value="29">2029</option>
+                        <option value="30">2030</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <label
+                      for="nomorKartuDebit"
+                      class="form-label fw-semibold mb-10"
+                      >Kode Keamanan</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control fw-light text-sm"
+                      name="CVC"
+                      id="CVC"
+                      aria-describedby="CVC"
+                      placeholder="Kode Keamanan"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="box mt-30">
+                <div class="d-flex flex-row justify-content-between">
+                  <p class="fw-semibold mb-0">Total Pembayaran</p>
+                  <p class="fw-semibold mb-0 color-palette-3">
+                    IDR <span id="totalPembayaran"></span>
+                  </p>
+                </div>
+              </div>
+              <div class="mt-30">
+                <p>
+                  Dengan menekan tombol, Anda telah menyetujui
+                  <a href="#" class="color-palette-4 fw-medium" target="_blank"
+                    >Syarat & Ketentuan</a
+                  >
+                  dan
+                  <a href="#" class="color-palette-4 fw-medium" target="_blank"
+                    >Kebijakan Privasi</a
+                  >
+                  NginepYuk
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="box">
+              <h2
+                class="text-2xl fw-semibold mb-15 skeleton hide-text"
+                id="hotelTitle"
+              >
+                Aryaduta Menteng
+              </h2>
+              <div class="d-flex flex-row mb-15">
+                <div class="d-flex img-wrapper skeleton hide-text" id="imgRoom">
+                  <img
+                    src="./assets/images/hotel-detail-2.png"
+                    class="img-fluid"
+                    style="visibility: hidden"
+                    alt=""
+                  />
+                </div>
+                <div class="ml-15 d-flex flex-column">
+                  <p
+                    class="fw-medium text-truncate mb-6 skeleton hide-text"
+                    id="roomTitle"
+                  >
+                    Kamar Superior Double dengan pemandangan kota
+                  </p>
+                  <div class="d-flex flex-row align-items-center">
+                    <img
+                      src="./assets/images/icon-wifi.svg"
+                      width="21"
+                      height="21"
+                      alt=""
+                    />
+                    <p class="fw-regular text-sm mb-0 ml-6">Wifi Gratis</p>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="color-palette-2 mb-0">Tamu per kamar</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="guest">
+                  2 tamu
+                </p>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="color-palette-2 mb-0">Tipe Tempat Tidur</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="bedType">
+                  Queen Bed
+                </p>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="color-palette-2 mb-0">Check-in</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="checkIn">
+                  Senin, 14 Mar 2022 14:00
+                </p>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-20">
+                <p class="color-palette-2 mb-0">Check-out</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="checkOut">
+                  Rabu, 16 Mar 2022 12:00
+                </p>
+              </div>
+              <div class="hr mb-20"></div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="mb-0">Quantity</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="quantity">1</p>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="mb-0">Sub total</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="subTotal">
+                  IDR 649.000
+                </p>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="mb-0">Discount</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="discount"></p>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-15">
+                <p class="mb-0">Pajak dan biaya</p>
+                <p class="fw-medium mb-0 skeleton hide-text" id="tax">
+                  IDR 50.000
+                </p>
+              </div>
+              <div class="d-flex flex-row justify-content-between">
+                <p class="mb-0">Total</p>
+                <p
+                  class="fw-semibold mb-0 color-palette-3 skeleton hide-text"
+                  id="total"
+                >
+                  IDR 699.000
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-50">
+          <div class="col"></div>
+          <div class="col-lg-5">
+            <button
+              class="btn btn-primary py-10 btn-payment mb-20 fw-semibold text-lg"
+              data-step="1"
+              type="button"
+            >
+              Lanjut Pembayaran
+            </button>
+            <button
+              class="btn btn-primary py-10 btn-cancel color-palette-1 text-lg"
+              data-step="1"
+              type="button"
+            >
+              Batal Pesan
+            </button>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer mt-50">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <p class="m-0 p-0 color-palette-2 text-lg fw-light">
+            Copyright © 2022 NginepYuk
+          </p>
+        </div>
+      </div>
+    </section>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        function getCookie(cname) {
+          let name = cname + '=';
+          let ca = document.cookie.split(';');
+          for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return '';
+        }
+        let jwt = getCookie('jwt');
+        function parseJwt(token) {
+          var base64Url = token.split('.')[1];
+          var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          var jsonPayload = decodeURIComponent(
+            atob(base64)
+              .split('')
+              .map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+              })
+              .join('')
+          );
+
+          return JSON.parse(jsonPayload);
+        }
+        if (jwt) {
+          let data = parseJwt(jwt).data;
+          document.querySelector(
+            '#nav-right'
+          ).innerHTML = `<div class="d-flex flex-row align-items-center">
+            <img
+              src="./assets/images/default-avatar.svg"
+              width="40"
+              height="40"
+              class="rounded-circle"
+              alt=""
+            />
+            <div class="fullName fw-medium text-md ml-10">${data.fullName}</div>
+          </div>`;
+        } else {
+          document.querySelector('#nav-right').innerHTML = `<a
+                class="btn btn-sign-in pb-10 pt-10 pl-32 pr-32 color-palette-1 fw-medium text-lg"
+                href="./auth/sign-in.html"
+                >Sign In</a
+              >
+              <a
+                class="btn btn-sign-up pb-10 pt-10 pl-32 pr-32 color-palette-1 fw-semibold text-lg text-white"
+                href="./auth/sign-up.html"
+                >Sign Up</a
+              >`;
+        }
+
+        function removeSkeleton(element) {
+          document
+            .querySelector(element)
+            .classList.remove('skeleton', 'hide-text');
+        }
+        async function getRoom() {
+          try {
+            const response = await fetch(
+              `http://nginepyuk-api.com/hotel/findRoomBy?id=${localStorage.getItem(
+                'roomId'
+              )}`,
+              {
+                method: 'GET',
+                headers: {
+                  Accept: 'application/json',
+                },
+              }
+            );
+            if (response.status == 404) {
+              response.text().then((text) => {
+                text = JSON.parse(text);
+                toastr.error(text['message']);
+                window.location = '/';
+              });
+            } else if (response.status == 200) {
+              response.text().then((text) => {
+                const searchData = JSON.parse(localStorage.getItem('search'));
+                const checkIn = new Date(searchData.checkIn);
+                const yearCheckIn = new Intl.DateTimeFormat('en', {
+                  year: 'numeric',
+                }).format(checkIn);
+                const monthCheckIn = new Intl.DateTimeFormat('en', {
+                  month: 'short',
+                }).format(checkIn);
+                const dayCheckIn = new Intl.DateTimeFormat('en', {
+                  day: '2-digit',
+                }).format(checkIn);
+                const shortDayCheckIn = new Intl.DateTimeFormat('en', {
+                  weekday: 'short',
+                }).format(checkIn);
+
+                const checkOut = new Date(searchData.checkOut);
+                const yearCheckOut = new Intl.DateTimeFormat('en', {
+                  year: 'numeric',
+                }).format(checkOut);
+                const monthCheckOut = new Intl.DateTimeFormat('en', {
+                  month: 'short',
+                }).format(checkOut);
+                const dayCheckOut = new Intl.DateTimeFormat('en', {
+                  day: '2-digit',
+                }).format(checkOut);
+                const shortDayCheckOut = new Intl.DateTimeFormat('en', {
+                  weekday: 'short',
+                }).format(checkOut);
+                const internationalNumberFormat = new Intl.NumberFormat(
+                  'en-US'
+                );
+
+                text = JSON.parse(text);
+                removeSkeleton('#hotelTitle');
+                removeSkeleton('#roomTitle');
+                removeSkeleton('#guest');
+                removeSkeleton('#bedType');
+                removeSkeleton('#checkIn');
+                removeSkeleton('#checkOut');
+                removeSkeleton('#subTotal');
+                removeSkeleton('#tax');
+                removeSkeleton('#total');
+                removeSkeleton('#quantity');
+                removeSkeleton('#imgRoom');
+                removeSkeleton('#discount');
+                document.querySelector('#hotelTitle').innerHTML =
+                  text.room[0].hotelName;
+                document.querySelector('#roomTitle').innerHTML =
+                  text.room[0].roomTitle;
+                document.querySelector('#guest').innerHTML =
+                  text.room[0].guest + ' tamu';
+                document.querySelector('#bedType').innerHTML =
+                  text.room[0].bedType;
+                document.querySelector(
+                  '#checkIn'
+                ).innerHTML = `${shortDayCheckIn}, ${dayCheckIn} ${monthCheckIn} ${yearCheckIn}`;
+                document.querySelector(
+                  '#checkOut'
+                ).innerHTML = `${shortDayCheckOut}, ${dayCheckOut} ${monthCheckOut} ${yearCheckOut}`;
+                document.querySelector('#quantity').innerHTML = searchData.room;
+                document.querySelector('#discount').innerHTML =
+                  'IDR ' +
+                  internationalNumberFormat.format(
+                    text.room[0].discount * searchData.room
+                  );
+                document.querySelector('#subTotal').innerHTML =
+                  'IDR ' +
+                  internationalNumberFormat.format(
+                    text.room[0].price * searchData.room
+                  );
+                let tax =
+                  ((text.room[0].price - text.room[0].discount) *
+                    searchData.room *
+                    11) /
+                  100;
+                document.querySelector('#tax').innerHTML =
+                  'IDR ' + internationalNumberFormat.format(tax);
+                document.querySelector('#total').innerHTML =
+                  'IDR ' +
+                  internationalNumberFormat.format(
+                    (text.room[0].price - text.room[0].discount) *
+                      searchData.room +
+                      tax
+                  );
+                document.querySelector('#totalPembayaran').innerHTML =
+                  internationalNumberFormat.format(
+                    (text.room[0].price - text.room[0].discount) *
+                      searchData.room +
+                      tax
+                  );
+                document.querySelector('#imgRoom').innerHTML = `<img
+                    src="${'http://' + text.room[0].imageUrl}"
+                    class="img-fluid"
+                    alt=""
+                  />`;
+              });
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }
+        getRoom();
+        if (!localStorage.getItem('step')) {
+          localStorage.setItem('step', '1');
+        }
+        if (localStorage.getItem('step') == '2') {
+          $('.btn-payment').attr('data-step', '2');
+          $('.btn-cancel').attr('data-step', '2');
+          $('#stepper1').removeClass('active');
+          $('#stepper2').addClass('active');
+          $('#step1').addClass('d-none');
+          $('#step2').removeClass('d-none');
+          $('.btn-payment').addClass('d-none');
+          $('.title').html('Metode Pembayaran');
+        }
+        if (localStorage.getItem('step') == '3') {
+          $('.btn-payment').attr('data-step', '3');
+          $('.btn-cancel').attr('data-step', '3');
+          $('#stepper1').removeClass('active');
+          $('#stepper2').addClass('active');
+          $('#step1').addClass('d-none');
+          $('#step3').removeClass('d-none');
+          $('.btn-payment').html('Bayar');
+          $('.btn-cancel').html('Batal Bayar');
+          $('.title').html('Kartu Debit');
+        }
+      });
+
+      $('input[name="namaPemesan"]').click(function () {
+        if ($('input[name="namaPemesan"]:checked').val() == 'orangLain') {
+          $('.namaTamu').removeClass('d-none');
+        } else if ($('input[name="namaPemesan"]:checked').val() == 'sama') {
+          $('.namaTamu').addClass('d-none');
+        }
+      });
+      $('#debit').click(function () {
+        localStorage.setItem('step', '3');
+        $('.btn-payment').attr('data-step', '3');
+        $('.btn-cancel').attr('data-step', '3');
+        $('.btn-payment').removeClass('d-none');
+        $('.btn-payment').html('Bayar');
+        $('.btn-cancel').html('Batal Bayar');
+        $('.title').html('Kartu Debit');
+        $('#step2').addClass('d-none');
+        $('#step3').removeClass('d-none');
+      });
+      $('.btn-payment').click(async function () {
+        if (
+          $(this).attr('data-step') === '1' &&
+          localStorage.getItem('step') === '1'
+        ) {
+          let fullName = $('#nama').val();
+          let phoneNumber = $('#phoneNumber').val();
+          let email = $('#email').val();
+          let namaTamu =
+            $('input[name="namaPemesan"]:checked').val() == 'orangLain'
+              ? $('#namaTamu').val()
+              : fullName;
+          if (fullName !== '' && phoneNumber !== '' && email !== '') {
+            let detailBooking = {
+              fullName: fullName,
+              phoneNumber: phoneNumber,
+              email: email,
+              visitorName: namaTamu,
+            };
+            localStorage.setItem(
+              'detailBooking',
+              JSON.stringify(detailBooking)
+            );
+            localStorage.setItem('step', '2');
+            $(this).attr('data-step', '2');
+            $('.btn-cancel').attr('data-step', '2');
+
+            $('#stepper1').removeClass('active');
+            $('#stepper2').addClass('active');
+            $('#step1').addClass('d-none');
+            $('#step2').removeClass('d-none');
+            $(this).addClass('d-none');
+            $('.title').html('Metode Pembayaran');
+          } else {
+            toastr.error('Lengkapi semua field');
+          }
+        } else if (
+          $(this).attr('data-step') === '3' &&
+          localStorage.getItem('step') === '3'
+        ) {
+          let namaPemilikKartu = $('#namaPemilikKartu').val();
+          let nomorKartuDebit = $('#nomorKartuDebit').val();
+          let month = $('#month option').filter(':selected').val();
+          let year = $('#year option').filter(':selected').val();
+          let cvc = $('#CVC').val();
+          if (
+            namaPemilikKartu !== '' &&
+            nomorKartuDebit !== '' &&
+            month !== '' &&
+            year !== '' &&
+            cvc !== ''
+          ) {
+            try {
+              let detailBooking = JSON.parse(
+                localStorage.getItem('detailBooking')
+              );
+              let search = JSON.parse(localStorage.getItem('search'));
+              let name = 'jwt=';
+              let ca = document.cookie.split(';');
+              let jwt;
+              for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                  jwt = c.substring(name.length, c.length);
+                }
+              }
+              let roomId = localStorage.getItem('roomId');
+              let cardOwner = $('#namaPemilikKartu').val();
+              let cardNumber = $('#nomorKartuDebit').val();
+              let month = $('#month option').filter(':selected').val();
+              let year = $('#year option').filter(':selected').val();
+
+              let checkIn = new Date(search.checkIn);
+              var checkInDate =
+                checkIn.getFullYear() +
+                '-' +
+                (checkIn.getMonth() + 1) +
+                '-' +
+                checkIn.getDate();
+              var checkInTime =
+                checkIn.getHours() +
+                ':' +
+                checkIn.getMinutes() +
+                ':' +
+                checkIn.getSeconds();
+              var checkInDateTime = checkInDate + ' ' + checkInTime;
+
+              let checkOut = new Date(search.checkOut);
+              var checkOutDate =
+                checkOut.getFullYear() +
+                '-' +
+                (checkOut.getMonth() + 1) +
+                '-' +
+                checkOut.getDate();
+              var checkOutTime =
+                checkOut.getHours() +
+                ':' +
+                checkOut.getMinutes() +
+                ':' +
+                checkOut.getSeconds();
+              var checkOutDateTime = checkOutDate + ' ' + checkOutTime;
+
+              let message = {
+                status: 'ongoing',
+                quantity: search.room,
+                bookingStartDate: checkInDateTime,
+                bookingEndDate: checkOutDateTime,
+                roomId: roomId,
+                fullName: detailBooking.fullName,
+                phoneNumber: detailBooking.phoneNumber,
+                email: detailBooking.email,
+                visitorName: detailBooking.visitorName,
+                paymentMethod: 'debit',
+                virtualAccount: 'N/A',
+                noVirtualAccount: 'N/A',
+                cardOwner: cardOwner,
+                cardNumber: cardNumber,
+                cardExpired: month + '/' + year,
+              };
+              console.log(message);
+              console.log(jwt);
+              const response = await fetch(
+                'http://nginepyuk-api.com/booking/create',
+                {
+                  method: 'POST',
+                  headers: {
+                    Accept: 'application/json',
+                    Authorization: `Bearer ${jwt}`,
+                  },
+                  body: JSON.stringify(message),
+                }
+              );
+              if (response.status == 503) {
+                response.text().then((text) => {
+                  text = JSON.parse(text);
+                  console.log(text);
+                });
+              } else if (response.status == 201) {
+                response.text().then((text) => {
+                  text = JSON.parse(text);
+                  console.log(text);
+                });
+              } else if (response.status == 401) {
+                response.text().then((text) => {
+                  text = JSON.parse(text);
+                  console.log(text);
+                });
+              } else if (response.status == 400) {
+                response.text().then((text) => {
+                  text = JSON.parse(text);
+                  console.log(text);
+                });
+              }
+            } catch (error) {
+              console.log(error);
+            }
+            localStorage.removeItem('step');
+            localStorage.removeItem('detailBooking');
+            localStorage.removeItem('roomId');
+            window.location.href = 'success.html';
+          } else {
+            toastr.error('Lengkapi semua field');
+          }
+        }
+      });
+
+      $('.btn-cancel').click(function () {
+        if (
+          $(this).attr('data-step') == '1' &&
+          localStorage.getItem('step') == '1'
+        ) {
+          window.history.go(-1);
+        } else if (
+          $(this).attr('data-step') == '2' &&
+          localStorage.getItem('step') == '2'
+        ) {
+          localStorage.setItem('step', '1');
+          $(this).attr('data-step', '1');
+          $('.btn-payment').attr('data-step', '1');
+          $('#stepper2').removeClass('active');
+          $('#stepper1').addClass('active');
+          $('#step2').addClass('d-none');
+          $('#step1').removeClass('d-none');
+          $('.btn-payment').removeClass('d-none');
+          $('.title').html('Informasi Booking');
+        } else if (
+          $(this).attr('data-step') == '3' &&
+          localStorage.getItem('step') == '3'
+        ) {
+          localStorage.setItem('step', '2');
+          $(this).attr('data-step', '2');
+          $('.btn-payment').attr('data-step', '2');
+
+          $('#stepper1').removeClass('active');
+          $('#stepper2').addClass('active');
+          $('#step3').addClass('d-none');
+          $('#step2').removeClass('d-none');
+          $('.btn-payment').addClass('d-none');
+          $('.title').html('Metode Pembayaran');
+        }
+      });
+    </script>
+  </body>
+</html>

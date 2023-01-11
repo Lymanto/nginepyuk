@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/utilities.css" />
+    <link rel="stylesheet" href="../assets/css/sign-up.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+      rel="stylesheet"
+    />
+
+    <title>NginepYuk</title>
+  </head>
+
+  <body>
+    <!-- Sign Up -->
+    <section class="sign-up mx-auto pt-lg-100 pb-lg-100 pt-30 pb-47">
+      <div class="container mx-auto">
+        <div class="pb-50">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../assets/images/logo.svg" alt="" />
+          </a>
+        </div>
+        <h2 class="text-4xl fw-bold color-palette-1 mb-10">Sign Up</h2>
+        <p class="text-lg color-palette-1 m-0">
+          Daftar dan bergabung dengan kami
+        </p>
+        <form id="form">
+          <div class="pt-50">
+            <label
+              for="name"
+              class="form-label text-lg fw-medium color-palette-1 mb-10"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              class="form-control rounded-pill text-lg"
+              id="name"
+              name="name"
+              aria-describedby="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="pt-30">
+            <label
+              for="email"
+              class="form-label text-lg fw-medium color-palette-1 mb-10"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              class="form-control rounded-pill text-lg"
+              id="email"
+              name="email"
+              aria-describedby="email"
+              placeholder="Enter your email address"
+            />
+          </div>
+          <div class="pt-30">
+            <label
+              for="password"
+              class="form-label text-lg fw-medium color-palette-1 mb-10"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control rounded-pill text-lg"
+              id="password"
+              name="password"
+              aria-describedby="password"
+              placeholder="Your password"
+            />
+          </div>
+          <div class="button-group d-flex flex-column mx-auto pt-50">
+            <button
+              class="btn btn-sign-up fw-medium text-lg text-white mb-16"
+              id="continue"
+            >
+              Continue
+            </button>
+            <!-- <button type="submit" class="btn btn-sign-up fw-medium text-lg text-white  mb-16"
+                        role="button">Continue</button> -->
+            <a
+              class="btn btn-sign-in fw-medium text-lg color-palette-1"
+              href="sign-in.html"
+              role="button"
+              >Sign In</a
+            >
+          </div>
+        </form>
+      </div>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .querySelector('#form')
+        .addEventListener('submit', async function (evt) {
+          evt.preventDefault();
+          try {
+            let fullName = document.querySelector('#name').value;
+            let email = document.querySelector('#email').value;
+            let password = document.querySelector('#password').value;
+            let message = {
+              fullName: fullName,
+              email: email,
+              password: password,
+            };
+            const response = await fetch(
+              'http://nginepyuk-api.com/auth/register',
+              {
+                method: 'POST',
+                headers: {
+                  Accept: 'application/json',
+                },
+                body: JSON.stringify(message),
+              }
+            );
+
+            if (response.status == 503) {
+              response.text().then((text) => {
+                text = JSON.parse(text);
+                toastr.error(text['message']);
+              });
+            } else if (response.status == 400) {
+              response.text().then((text) => {
+                text = JSON.parse(text);
+                if (text.error.fullName) {
+                  toastr.error(text.error.fullName);
+                }
+                if (text.error.email) {
+                  toastr.error(text.error.email);
+                }
+                if (text.error.password) {
+                  toastr.error(text.error.password);
+                }
+              });
+            } else if (response.status == 201) {
+              window.location = 'sign-in.html';
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        });
+    </script>
+  </body>
+</html>

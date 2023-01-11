@@ -1,0 +1,207 @@
+.box {
+  background-color: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+/* stepper */
+ol.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+ol.stepper li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  color: #fff;
+}
+ol.stepper li:after {
+  position: absolute;
+  content: '';
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.62961 8.52668L7.82252 17.2306C8.46805 18.3126 9.94113 18.5354 10.8778 17.6927L27.1842 3.02177" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: #1abc9c;
+  transform: scale(1);
+  transition: 0.35s transform ease-in-out;
+}
+ol.stepper li:not(:last-child) {
+  margin-right: 60px;
+}
+ol.stepper li:not(:last-child):before {
+  content: '';
+  z-index: -2;
+  top: 50%;
+  left: 100%;
+  position: absolute;
+  width: 70px;
+  height: 1px;
+  background-color: #e9ecef;
+}
+ol.stepper li.active {
+  background-color: #e9ecef;
+  color: #b0b0b0;
+}
+ol.stepper li.active:after {
+  z-index: -1;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  transform: scale(1.2);
+}
+ol.stepper li.active ~ li {
+  color: #b0b0b0;
+  background: #e9ecef;
+}
+ol.stepper li.active ~ li:after {
+  content: none;
+}
+
+/* ------ */
+.img-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.img-wrapper > .img-fluid {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.text-truncate {
+  max-width: 300px;
+}
+.img-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 38.75%
+  );
+}
+.hr {
+  border: 1px solid #e5e5e5;
+  border-radius: 1px;
+}
+.form-check-input:checked[type='radio'] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%233C3E95'/%3e%3c/svg%3e");
+}
+.form-check-input:checked[type='radio'] {
+  background-color: #fff;
+  border-color: #3c3e95;
+}
+
+.form-check-input {
+  margin-top: 0;
+  width: 20px;
+  height: 20px;
+}
+.form-check-input:checked[type='checkbox'] {
+  background-color: #3c3e95;
+  border-color: #3c3e95;
+}
+.footer {
+  padding: 30px 0px;
+}
+.btn-payment,
+.btn-cancel {
+  border-radius: 12px;
+  width: 100%;
+}
+.btn-cancel {
+  background-color: #e7eaf5;
+  border: 1px solid #e7eaf5;
+}
+.btn-cancel:hover,
+.btn-cancel:focus {
+  background-color: #e7eaf5;
+  border: 1px solid #e7eaf5;
+  color: #24201d;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes gradient-animation {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.skeleton.hide-text {
+  background: #e2e2e2;
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.skeleton.hide-text::before {
+  content: '';
+  position: absolute;
+  left: 0%;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background: linear-gradient(to right, #e2e2e2 25%, #d5d5d5 50%, #e2e2e2 100%);
+  animation-name: gradient-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  filter: blur(5px);
+}
+.opacity-50 {
+  cursor: not-allowed !important;
+}
+@media (min-width: 350px) and (max-width: 768px) {
+  .navbar-brand > img {
+    width: 120px;
+  }
+  .navbar.pb-50 {
+    padding-bottom: 30px;
+  }
+  .btn.btn-sign-in.text-lg,
+  .btn.btn-sign-up.text-lg {
+    font-size: 0.875rem;
+    padding: 5px 18px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+@media (max-width: 768px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

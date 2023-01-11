@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NginepYuk</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/navbar.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="/assets/css/detail.css" />
+    <link rel="stylesheet" href="/assets/css/datepicker.css" />
+    <link rel="stylesheet" href="/assets/css/utilities.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light pt-lg-40 pb-lg-40 pt-30 pb-50"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img src="/assets/images/logo.svg" alt="" />
+          </a>
+          <div class="d-flex flex-row" id="nav-right"></div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="mb-30">
+      <div class="container-fluid">
+        <div class="detail-box">
+          <div class="row align-items-center">
+            <div class="col">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Hotel Details
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              class="col-auto text-center d-flex flex-column align-items-center"
+            >
+              <h1
+                class="text-4xl fw-semibold color-palette-1 skeleton hide-text"
+                id="hotelTitle"
+              >
+                Aryaduta Menteng
+              </h1>
+              <div
+                class="d-flex flex-row mb-6 skeleton hide-text"
+                id="hotelStar"
+              >
+                <img
+                  src="/assets/images/icon-star.svg"
+                  style="visibility: hidden"
+                  alt="star"
+                />
+                <img
+                  src="/assets/images/icon-star.svg"
+                  style="visibility: hidden"
+                  alt="star"
+                />
+                <img
+                  src="/assets/images/icon-star.svg"
+                  style="visibility: hidden"
+                  alt="star"
+                />
+                <img
+                  src="/assets/images/icon-star.svg"
+                  style="visibility: hidden"
+                  alt="star"
+                />
+                <img
+                  src="/assets/images/icon-star.svg"
+                  style="visibility: hidden"
+                  alt="star"
+                />
+              </div>
+              <div
+                class="text-lg fw-light color-palette-2 skeleton hide-text"
+                id="location"
+              >
+                Lampung, Indonesia
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+          <div class="row mt-30">
+            <div class="col"></div>
+            <div class="col-auto d-flex flex-row" id="imageGallerries">
+              <div class="img-detail-1 skeleton hide-text" id="img-detail-1">
+                <img
+                  src="/assets/images/hotel1.png"
+                  style="visibility: hidden"
+                  class="img-fluid"
+                  alt="hotel"
+                />
+              </div>
+              <div class="d-flex flex-column ml-10">
+                <div class="img-detail-2 skeleton hide-text" id="img-detail-2">
+                  <img
+                    src="/assets/images/hotel-detail-1.png"
+                    style="visibility: hidden"
+                    class="img-fluid"
+                    alt="hotel"
+                  />
+                </div>
+                <div
+                  class="img-detail-2 position-relative skeleton hide-text"
+                  id="img-detail-3"
+                >
+                  <a href="#"
+                    ><span
+                      class="position-absolute top-50 start-50 translate-middle text-lg"
+                      >See All Photos</span
+                    ></a
+                  >
+                  <img
+                    src="/assets/images/hotel-detail-2.png"
+                    style="visibility: hidden"
+                    class="img-fluid"
+                    alt="hotel"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+          <div class="row mt-30">
+            <div class="col-auto">
+              <p class="text-xl fw-semibold color-palette-1 mb-10">
+                Alamat Lengkap
+              </p>
+              <p class="mb-0 skeleton hide-text" id="address">
+                Jl. KKO Usman & Harun 44-48, Gambir, Jakarta Pusat, Jakarta,
+                Indonesia, 10110
+              </p>
+            </div>
+            <div class="col"></div>
+            <div class="col-auto text-right">
+              <p class="mb-0">Mulai dari</p>
+              <div class="d-flex flex-column text-right">
+                <div class="fw-medium text-30 color-palette-3">
+                  <span class="text-md">IDR</span>
+                  <span class="skeleton hide-text" id="price">699.000</span>
+                </div>
+                <div class="text-xs color-palette-2 fw-medium">Per night</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-30">
+      <div class="container-fluid">
+        <div class="search-box">
+          <form action="#">
+            <div class="d-flex flex-row flex-xs-column justify-content-center">
+              <div class="checkIn mr-40 mr-md-20 mr-xs-0 mb-xs-18">
+                <label
+                  for="datepicker"
+                  class="form-label text-lg fw-semibold color-palette-1 mb-10"
+                  >Check-in</label
+                >
+                <div class="position-relative">
+                  <label for="datepicker">
+                    <img
+                      src="/assets/images/icon-calendar.svg"
+                      alt="icon tujuan"
+                      class="position-absolute top-50 translate-middle input-icon"
+                    />
+                    <input
+                      type="text"
+                      id="datepicker"
+                      class="form-control"
+                      autocomplete="off"
+                    />
+                  </label>
+                </div>
+              </div>
+              <div class="vr vr-sm"></div>
+              <div
+                class="durasi ml-40 mr-40 mr-md-0 ml-md-20 mb-xs-18 mr-xs-0 ml-xs-0"
+              >
+                <label
+                  for="durasi"
+                  class="form-label text-lg fw-semibold color-palette-1 mb-10"
+                  >Durasi</label
+                >
+                <div class="position-relative">
+                  <img
+                    src="/assets/images/icon-duration.svg"
+                    alt="icon tujuan"
+                    class="position-absolute top-50 translate-middle input-icon"
+                  />
+                  <select
+                    class="form-select"
+                    id="durasi"
+                    name="durasi"
+                    aria-describedby="durasi"
+                  >
+                    <option value="1" selected>1 night</option>
+                    <option value="2">2 night</option>
+                    <option value="3">3 night</option>
+                    <option value="4">4 night</option>
+                    <option value="5">5 night</option>
+                    <option value="6">6 night</option>
+                    <option value="7">7 night</option>
+                    <option value="8">8 night</option>
+                    <option value="9">9 night</option>
+                    <option value="10">10 night</option>
+                    <option value="11">11 night</option>
+                    <option value="12">12 night</option>
+                    <option value="13">13 night</option>
+                    <option value="13">13 night</option>
+                    <option value="14">14 night</option>
+                    <option value="15">15 night</option>
+                    <option value="16">16 night</option>
+                    <option value="17">17 night</option>
+                    <option value="18">18 night</option>
+                    <option value="19">19 night</option>
+                    <option value="20">20 night</option>
+                    <option value="21">21 night</option>
+                    <option value="22">22 night</option>
+                    <option value="23">23 night</option>
+                    <option value="24">24 night</option>
+                    <option value="25">25 night</option>
+                    <option value="26">26 night</option>
+                    <option value="27">27 night</option>
+                    <option value="28">28 night</option>
+                    <option value="29">29 night</option>
+                    <option value="30">30 night</option>
+                  </select>
+                </div>
+              </div>
+              <div class="vr vr-sm"></div>
+              <div
+                class="tamuDanKamar mb-xs-18 ml-40 mr-40 mr-md-0 ml-md-20 mr-xs-0 ml-xs-0"
+              >
+                <label
+                  for="tamuDanKamar"
+                  class="form-label text-lg fw-semibold color-palette-1 mb-10"
+                  >Tamu dan Kamar</label
+                >
+                <div>
+                  <div class="position-relative">
+                    <img
+                      src="/assets/images/icon-visitor.svg"
+                      alt="icon tujuan"
+                      class="position-absolute top-50 translate-middle input-icon"
+                    />
+                    <div
+                      type="text"
+                      class="form-control"
+                      id="tamuDanKamar"
+                      name="tamuDanKamar"
+                      aria-describedby="tamuDanKamar"
+                    >
+                      <span class="dewasa">2</span> Dewasa,
+                      <span class="anak">0</span> Anak,
+                      <span class="kamar">1</span> Kamar
+                    </div>
+                  </div>
+                  <div class="select-box" data-selected="false">
+                    <div class="d-flex flex-row justify-content-between mb-16">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="/assets/images/icon-adult.svg"
+                          alt="icon adult"
+                          width="30"
+                          height="30"
+                        />
+                        <div class="ml-10">Adult</div>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="btn btn-counter minus" aria-type="dewasa">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-id="IcSymbolAddMinus"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#0194f3"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                        <input
+                          type="text"
+                          name="adult"
+                          id="adult"
+                          class="form-control input-counter mx-1"
+                          value="2"
+                          readonly
+                        />
+                        <div class="btn btn-counter plus" aria-type="dewasa">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-id="IcSymbolAddPlus"
+                          >
+                            <path
+                              d="M12 5V19M5 12H19"
+                              stroke="#0194f3"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between mb-16">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="/assets/images/icon-children.svg"
+                          alt="icon adult"
+                          width="30"
+                          height="30"
+                        />
+                        <div class="ml-10">Children</div>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="btn btn-counter minus" aria-type="anak">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-id="IcSymbolAddMinus"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#CDD0D1"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                        <input
+                          type="text"
+                          name="children"
+                          id="children"
+                          class="form-control input-counter mx-1"
+                          value="0"
+                          readonly
+                        />
+                        <div class="btn btn-counter plus" aria-type="anak">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-id="IcSymbolAddPlus"
+                          >
+                            <path
+                              d="M12 5V19M5 12H19"
+                              stroke="#0194f3"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="/assets/images/icon-room.svg"
+                          alt="icon adult"
+                          width="30"
+                          height="30"
+                        />
+                        <div class="ml-10">Room</div>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="btn btn-counter minus" aria-type="kamar">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-id="IcSymbolAddMinus"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#CDD0D1"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                        <input
+                          type="text"
+                          name="room"
+                          id="room"
+                          class="form-control input-counter mx-1"
+                          value="1"
+                          readonly
+                        />
+                        <div class="btn btn-counter plus" aria-type="kamar">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-id="IcSymbolAddPlus"
+                          >
+                            <path
+                              d="M12 5V19M5 12H19"
+                              stroke="#0194f3"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-search">
+                <img
+                  src="/assets/images/icon-search.svg"
+                  width="25"
+                  height="25"
+                  alt=""
+                />
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div id="roomBox"></div>
+
+    <section class="mb-30">
+      <div class="container-fluid">
+        <div class="review">
+          <div class="row">
+            <div class="col">
+              <p class="fw-semibold text-xl mb-20 color-palette-1">Review</p>
+              <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-column align-items-center mr-30">
+                  <div class="d-flex flex-row align-items-end">
+                    <p class="fw-medium text-3xl color-palette-4 mb-0">4.6</p>
+                    <p class="text-md color-palette-4 ml-6 mb-0">dari 5</p>
+                  </div>
+                  <p class="text-sm color-palette-1 mb-0">(500 reviews)</p>
+                  <div class="d-flex flex-row">
+                    <img
+                      src="/assets/images/icon-star.svg"
+                      width="25"
+                      height="25"
+                      alt="star"
+                    />
+                    <img
+                      src="/assets/images/icon-star.svg"
+                      width="25"
+                      height="25"
+                      alt="star"
+                    />
+                    <img
+                      src="/assets/images/icon-star.svg"
+                      width="25"
+                      height="25"
+                      alt="star"
+                    />
+                    <img
+                      src="/assets/images/icon-star.svg"
+                      width="25"
+                      height="25"
+                      alt="star"
+                    />
+                    <img
+                      src="/assets/images/icon-star.svg"
+                      width="25"
+                      height="25"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+                <div class="d-inline">
+                  <button
+                    class="btn btn-outline-primary mr-10 btn-review-filter"
+                    data-review-filter="semua"
+                  >
+                    Semua
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary mr-10 btn-review-filter"
+                    data-review-filter="bintang-1"
+                  >
+                    Bintang 1
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary mr-10 btn-review-filter"
+                    data-review-filter="bintang-2"
+                  >
+                    Bintang 2
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary mr-10 btn-review-filter"
+                    data-review-filter="bintang-3"
+                  >
+                    Bintang 3
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary mr-10 btn-review-filter"
+                    data-review-filter="bintang-4"
+                  >
+                    Bintang 4
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary btn-review-filter"
+                    data-review-filter="bintang-5"
+                  >
+                    Bintang 5
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="review">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                  <div class="review-profile d-flex flex-row">
+                    <img src="/assets/images/review.png" alt="review-profile" />
+                    <div class="ml-15">
+                      <p class="fw-medium text-md mb-6">Merry Aprilia</p>
+                      <p class="fw-regular color-palette-2 text-xs">
+                        1 Apr 2022
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="rating fw-semibold text-xs mb-15">4.6</div>
+                  <p class="fw-regular text-md">
+                    Liburan singkat di verse luxe hotel (3 malam), overall
+                    sangat sangat the best tetapi entah kenapa utk kamar 1015
+                    agak sulit di tap ya utk bagian pintu (utk buka kamar)
+                    makanya sering turun lg atau minta housekeeper nya, saran
+                    bagi saya sih mending parkiran utk motor nya lebih di
+                    perluas dan adanya maintenance utk hal hal semacam kejadian
+                    saya (katanya sih ada masalah listrik nya yg sulit ke detect
+                    kartu di bagian pintu). tp bagaimana pun tetep the best lah
+                    tidak mengecewakan, next time liburan singkat disana lg
+                    cukup menjanjikan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="d-flex flex-row mt-30">
+            <ul class="pagination ms-auto">
+              <li class="page-item">
+                <a href="#" class="page-link">
+                  <img
+                    src="/assets/images/arrow-left-gray.svg"
+                    alt="arrow left"
+                  />
+                </a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">1</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link active">2</a>
+              </li>
+              <li class="page-item"><a href="#" class="page-link">3</a></li>
+              <li class="page-item"><a href="#" class="page-link">...</a></li>
+              <li class="page-item">
+                <a href="#" class="page-link">
+                  <img src="/assets/images/arrow-right.svg" alt="arrow left" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer mt-50">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="d-flex flex-column">
+              <a class="navbar-brand" href="../index.html">
+                <img src="/assets/images/logo.svg" alt="" />
+              </a>
+              <p class="footer-definition mt-20">
+                NginepYuk hadir membantu Anda dalam mencari penginapan
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 gap-sm-0">
+            <div class="row">
+              <div class="col-md-4 col-6 mb-lg-0 mb-25">
+                <p class="text-lg fw-semibold color-palette-1 mb-12">
+                  Perusahaan
+                </p>
+                <ul class="list-unstyled">
+                  <li class="mb-6">
+                    <a
+                      href="#"
+                      class="text-lg color-palette-1 text-decoration-none"
+                      >Tentang Kami</a
+                    >
+                  </li>
+                  <li class="mb-6">
+                    <a
+                      href="#"
+                      class="text-lg color-palette-1 text-decoration-none"
+                      >Ketentuan Pengguna</a
+                    >
+                  </li>
+                  <li class="mb-6">
+                    <a
+                      href="#"
+                      class="text-lg color-palette-1 text-decoration-none"
+                      >Kebijakan & Privasi</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4 col-6 mb-lg-0 mb-25">
+                <p class="text-lg fw-semibold color-palette-1 mb-12">
+                  Dukungan
+                </p>
+                <ul class="list-unstyled">
+                  <li class="mb-6">
+                    <a
+                      href="#"
+                      class="text-lg color-palette-1 text-decoration-none"
+                      >Pengembalian Dana</a
+                    >
+                  </li>
+                  <li class="mb-6">
+                    <a
+                      href="#"
+                      class="text-lg color-palette-1 text-decoration-none"
+                      >Live Chatting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-md-4 col-12 mt-lg-0 mt-md-0 mt-25">
+                <div class="d-flex flex-column text-lg">
+                  <div class="fw-semibold">Kontak</div>
+                  <div class="mt-12">hi@nginepyuk.com</div>
+                  <div class="mt-6">team@nginepyuk.com</div>
+                  <div class="mt-6">Pasific 12, Jakarta Selatan</div>
+                  <div class="mt-6">021 - 1122 - 9090</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center mt-50">
+          <p class="m-0 p-0 color-palette-2 text-lg fw-light">
+            Copyright © 2022 NginepYuk
+          </p>
+        </div>
+      </div>
+    </section>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        localStorage.removeItem('step');
+
+        const searchData = JSON.parse(localStorage.getItem('search'));
+
+        $('#durasi').val(searchData.duration).change();
+
+        $('#adult').val(searchData.adult);
+        $('#children').val(searchData.children);
+        $('#room').val(searchData.room);
+        $('.dewasa').html(searchData.adult);
+        $('.anak').html(searchData.children);
+        $('.kamar').html(searchData.room);
+        const checkIn = new Date(searchData.checkIn);
+
+        const yearCheckIn = new Intl.DateTimeFormat('en', {
+          year: 'numeric',
+        }).format(checkIn);
+        const monthCheckIn = new Intl.DateTimeFormat('en', {
+          month: 'short',
+        }).format(checkIn);
+        const dayCheckIn = new Intl.DateTimeFormat('en', {
+          day: '2-digit',
+        }).format(checkIn);
+        const shortDayCheckIn = new Intl.DateTimeFormat('en', {
+          weekday: 'short',
+        }).format(checkIn);
+        $('#datepicker').val(
+          `${shortDayCheckIn}, ${dayCheckIn} ${monthCheckIn} ${yearCheckIn}`
+        );
+
+        function getCookie(cname) {
+          let name = cname + '=';
+          let ca = document.cookie.split(';');
+          for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return '';
+        }
+        let jwt = getCookie('jwt');
+        function parseJwt(token) {
+          var base64Url = token.split('.')[1];
+          var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          var jsonPayload = decodeURIComponent(
+            atob(base64)
+              .split('')
+              .map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+              })
+              .join('')
+          );
+
+          return JSON.parse(jsonPayload);
+        }
+        if (jwt) {
+          let data = parseJwt(jwt).data;
+          document.querySelector(
+            '#nav-right'
+          ).innerHTML = `<div class="d-flex flex-row align-items-center">
+            <img
+              src="/assets/images/default-avatar.svg"
+              width="40"
+              height="40"
+              class="rounded-circle"
+              alt=""
+            />
+            <div class="fullName fw-medium text-md ml-10">${data.fullName}</div>
+          </div>`;
+        } else {
+          document.querySelector('#nav-right').innerHTML = `<a
+                class="btn btn-sign-in pb-10 pt-10 pl-32 pr-32 color-palette-1 fw-medium text-lg"
+                href="./auth/sign-in.html"
+                >Sign In</a
+              >
+              <a
+                class="btn btn-sign-up pb-10 pt-10 pl-32 pr-32 color-palette-1 fw-semibold text-lg text-white"
+                href="./auth/sign-up.html"
+                >Sign Up</a
+              >`;
+        }
+        function removeSkeleton(element) {
+          document
+            .querySelector(element)
+            .classList.remove('skeleton', 'hide-text');
+        }
+        async function getHotel() {
+          try {
+            var url = window.location.href;
+            var id = url.substring(url.lastIndexOf('/') + 1);
+            const response = await fetch(
+              `http://nginepyuk-api.com/hotel/detail?id=${id}`,
+              {
+                method: 'GET',
+                headers: {
+                  Accept: 'application/json',
+                },
+              }
+            );
+            if (response.status == 404) {
+              response.text().then((text) => {
+                text = JSON.parse(text);
+                toastr.error(text['message']);
+              });
+            } else if (response.status == 200) {
+              response.text().then((text) => {
+                text = JSON.parse(text);
+                removeSkeleton('#hotelTitle');
+                removeSkeleton('#address');
+                removeSkeleton('#price');
+                removeSkeleton('#hotelStar');
+                document.querySelector('#hotelStar').innerHTML = '';
+                removeSkeleton('#location');
+                removeSkeleton('#img-detail-1');
+                removeSkeleton('#img-detail-2');
+                removeSkeleton('#img-detail-3');
+                document.querySelector('#hotelTitle').innerHTML =
+                  text.hotel[0].title;
+                document.querySelector(
+                  '#img-detail-1'
+                ).innerHTML = `<img src="${
+                  'http://' + text.images[0].imageUrl
+                }" class="img-fluid" alt="hotel">`;
+                document.querySelector(
+                  '#img-detail-2'
+                ).innerHTML = `<img src="${
+                  'http://' + text.images[1].imageUrl
+                }" class="img-fluid" alt="hotel">`;
+                document.querySelector('#img-detail-3').innerHTML = `<a href="#"
+                    ><span
+                      class="position-absolute top-50 start-50 translate-middle text-lg"
+                      >See All Photos</span
+                    ></a
+                  ><img src="${
+                    'http://' + text.images[2].imageUrl
+                  }" class="img-fluid" alt="hotel">`;
+                document.querySelector(
+                  '#location'
+                ).innerHTML = `${text.hotel[0].city}, ${text.hotel[0].country}`;
+                document.querySelector('#address').innerHTML =
+                  text.hotel[0].address;
+                document.querySelector('#price').innerHTML =
+                  text.hotel[0].price;
+                for (let index = 1; index < text.hotel[0].star; index++) {
+                  $(`<img
+                  src="/assets/images/icon-star.svg"
+                  alt="star"
+                />`).appendTo('#hotelStar');
+                }
+                document.querySelector(
+                  '#location'
+                ).innerHTML = `${text.hotel[0].city}, ${text.hotel[0].country}`;
+                const groupByCategory = text.categoryDetail.reduce(
+                  (group, product) => {
+                    const { category } = product;
+                    group[category] = group[category] ?? [];
+                    group[category].push(product);
+                    return group;
+                  },
+                  {}
+                );
+                const groupByCategoryRoom = text.room.reduce(
+                  (group, product) => {
+                    const { category } = product;
+                    group[category] = group[category] ?? [];
+                    group[category].push(product);
+                    return group;
+                  },
+                  {}
+                );
+
+                for (let index = 0; index < text.category.length; index++) {
+                  $(`<section class="mb-30">
+                      <div class="container-fluid">
+                        <div class="row gap-lg-0 gap-4">
+                          <div class="col-lg-4">
+                            <div class="box-1">
+                              <p class="fw-medium text-xl color-palette-1 mb-10">
+                                ${
+                                  groupByCategory[
+                                    text.category[index].category
+                                  ][0].category
+                                }
+                              </p>
+                              <div class="position-relative">
+                                <img
+                                  src="${
+                                    'http://' +
+                                    groupByCategory[
+                                      text.category[index].category
+                                    ][1].imageUrl
+                                  }"
+                                  class="img-fluid"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="d-flex flex-row mt-10">
+                                <div class="position-relative mr-10">
+                                  <img
+                                    src="${
+                                      'http://' +
+                                      groupByCategory[
+                                        text.category[index].category
+                                      ][2].imageUrl
+                                    }"
+                                    class="img-fluid"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="position-relative mr-10">
+                                  <img
+                                    src="${
+                                      'http://' +
+                                      groupByCategory[
+                                        text.category[index].category
+                                      ][3].imageUrl
+                                    }"
+                                    class="img-fluid"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="position-relative">
+                                  <a href="#"
+                                    ><span
+                                      class="position-absolute top-50 start-50 translate-middle text-xxs"
+                                      >See All Photos</span
+                                    ></a
+                                  >
+                                  <img
+                                    src="${
+                                      'http://' +
+                                      groupByCategory[
+                                        text.category[index].category
+                                      ][0].imageUrl
+                                    }"
+                                    class="img-fluid"
+                                    alt="hotel"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-8">
+                          ${groupByCategoryRoom[text.category[index].category]
+                            .map((element) => {
+                              return `<div class="box-2">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <div class="left-side flex-grow-1">
+                                    <p class="fw-medium text-xl mb-6">
+                                      ${element.roomTitle}
+                                    </p>
+                                    <div class="d-flex flex-row justify-content-between">
+                                      <div class="d-flex flex-row align-items-center">
+                                        <img
+                                          src="/assets/images/icon-tamu.svg"
+                                          width="21"
+                                          height="21"
+                                          alt=""
+                                        />
+                                        <p class="fw-regular text-sm mb-0 ml-6">${element.guest} tamu</p>
+                                      </div>
+                                      <div class="d-flex flex-row align-items-center">
+                                        <img
+                                          src="/assets/images/icon-wifi.svg"
+                                          width="21"
+                                          height="21"
+                                          alt=""
+                                        />
+                                        <p class="fw-regular text-sm mb-0 ml-6">Wifi Gratis</p>
+                                      </div>
+                                      <div class="d-flex flex-row align-items-center">
+                                        <img
+                                          src="/assets/images/icon-bedroom.svg"
+                                          width="21"
+                                          height="21"
+                                          alt=""
+                                        />
+                                        <p class="fw-regular text-sm mb-0 ml-6">${element.bedType}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-end right-side">
+                                    <button
+                                      class="btn btn-transparent color-palette-4 fw-medium mb-5"
+                                      id="see-detail"
+                                    >
+                                      Lihat Detail
+                                    </button>
+                                    <div class="d-flex flex-column text-right mb-16">
+                                      <div class="fw-medium text-xl color-palette-3">
+                                        <span class="text-md">IDR</span> ${element.price}
+                                      </div>
+                                      <div class="text-xs color-palette-2 fw-medium">
+                                        Per night
+                                      </div>
+                                    </div>
+                                    <button class="btn btn-primary bookNow" type="button" onclick="localStorage.setItem('roomId',${element.roomId});window.location.href='/payment'">Pesan Sekarang</button>
+                                  </div>
+                                </div>
+                              </div>`;
+                            })
+                            .join('')}
+                          </div>
+                      </div>
+                    </section>`).appendTo('#roomBox');
+                }
+              });
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }
+        getHotel();
+
+        $('#durasi').change(function () {
+          const checkOut = new Date($('#datepicker').datepicker('getDate'));
+          console.log($('#datepicker').datepicker('getDate'));
+          checkOut.setDate(
+            checkOut.getDate() + parseInt($('#durasi option:selected').val())
+          );
+          const yearCheckOut = new Intl.DateTimeFormat('en', {
+            year: 'numeric',
+          }).format(checkOut);
+          const monthCheckOut = new Intl.DateTimeFormat('en', {
+            month: 'short',
+          }).format(checkOut);
+          const dayCheckOut = new Intl.DateTimeFormat('en', {
+            day: '2-digit',
+          }).format(checkOut);
+          const shortDayCheckOut = new Intl.DateTimeFormat('en', {
+            weekday: 'short',
+          }).format(checkOut);
+          $('#checkOutValue').html(
+            `${shortDayCheckOut}, ${dayCheckOut} ${monthCheckOut} ${yearCheckIn}`
+          );
+        });
+        $('#datepicker').datepicker({
+          dateFormat: 'D, dd M yy',
+          duration: 'fast',
+          onSelect: function () {
+            const checkOut = new Date($(this).datepicker('getDate'));
+
+            checkOut.setDate(
+              checkOut.getDate() + parseInt($('#durasi option:selected').val())
+            );
+            const yearCheckOut = new Intl.DateTimeFormat('en', {
+              year: 'numeric',
+            }).format(checkOut);
+            const monthCheckOut = new Intl.DateTimeFormat('en', {
+              month: 'short',
+            }).format(checkOut);
+            const dayCheckOut = new Intl.DateTimeFormat('en', {
+              day: '2-digit',
+            }).format(checkOut);
+            const shortDayCheckOut = new Intl.DateTimeFormat('en', {
+              weekday: 'short',
+            }).format(checkOut);
+            $('#checkOutValue').html(
+              `${shortDayCheckOut}, ${dayCheckOut} ${monthCheckOut} ${yearCheckIn}`
+            );
+          },
+        });
+        $('#tamuDanKamar').click(function () {
+          //   alert('s');
+          if ($('.select-box').attr('data-selected') == 'false') {
+            $('.select-box').attr('data-selected', 'true');
+            $('.select-box').css('display', 'flex');
+          } else if ($('.select-box').attr('data-selected') == 'true') {
+            $('.select-box').attr('data-selected', 'false');
+            $('.select-box').css('display', 'none');
+          }
+        });
+        $('');
+      });
+      function minus(value) {
+        value -= 1;
+        return value;
+      }
+      function plus(value) {
+        value += 1;
+        return value;
+      }
+      function changeIconMinus(type, isDisable) {
+        if (isDisable) {
+          $(`.minus[aria-type="${type}"]`).html(
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSymbolAddMinus"><path d="M5 12H19" stroke="#CDD0D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+          );
+        } else {
+          $(`.minus[aria-type="${type}"]`).html(
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSymbolAddMinus"><path d="M5 12H19" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+          );
+        }
+      }
+      function changeIconPlus(type, isDisable) {
+        if (isDisable) {
+          $(`.plus[aria-type="${type}"]`).html(
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSymbolAddPlus"><path d="M12 5V19M5 12H19" stroke="#CDD0D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+          );
+        } else {
+          $(`.plus[aria-type="${type}"]`).html(
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSymbolAddPlus"><path d="M12 5V19M5 12H19" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+          );
+        }
+      }
+
+      $('.minus[aria-type="dewasa"]').click(function () {
+        let value = $('.dewasa').html();
+        if (value == 1) {
+          changeIconMinus($(this).attr('aria-type'), true);
+        } else {
+          if (value == 30) {
+            changeIconPlus($(this).attr('aria-type'), false);
+          }
+          $('input[name="adult"]').val(minus(parseInt(value)));
+          $('.dewasa').html(minus(parseInt(value)));
+          if (minus(parseInt(value)) == 1) {
+            changeIconMinus($(this).attr('aria-type'), true);
+          }
+        }
+      });
+      $('.plus[aria-type="dewasa"]').click(function () {
+        let value = $('.dewasa').html();
+        if (value == 30) {
+          changeIconPlus($(this).attr('aria-type'), true);
+        } else if (value == 1) {
+          $('input[name="adult"]').val(plus(parseInt(value)));
+          $('.dewasa').html(plus(parseInt(value)));
+          changeIconMinus($(this).attr('aria-type'), false);
+        } else {
+          $('input[name="adult"]').val(plus(parseInt(value)));
+          $('.dewasa').html(plus(parseInt(value)));
+          if (plus(parseInt(value)) == 30) {
+            changeIconPlus($(this).attr('aria-type'), true);
+          }
+        }
+      });
+      $('.minus[aria-type="anak"]').click(function () {
+        let value = $('.anak').html();
+        if (value == 0) {
+          changeIconMinus($(this).attr('aria-type'), true);
+        } else {
+          if (value == 6) {
+            changeIconPlus($(this).attr('aria-type'), false);
+          }
+          $('input[name="children"]').val(minus(parseInt(value)));
+          $('.anak').html(minus(parseInt(value)));
+          if (minus(parseInt(value)) == 0) {
+            changeIconMinus($(this).attr('aria-type'), true);
+          }
+        }
+      });
+      $('.plus[aria-type="anak"]').click(function () {
+        let value = $('.anak').html();
+        if (value == 6) {
+          changeIconPlus($(this).attr('aria-type'), true);
+        } else if (value == 0) {
+          $('input[name="children"]').val(plus(parseInt(value)));
+          $('.anak').html(plus(parseInt(value)));
+          changeIconMinus($(this).attr('aria-type'), false);
+        } else {
+          $('input[name="children"]').val(plus(parseInt(value)));
+          $('.anak').html(plus(parseInt(value)));
+          if (plus(parseInt(value)) == 6) {
+            changeIconPlus($(this).attr('aria-type'), true);
+          }
+        }
+      });
+      $('.minus[aria-type="kamar"]').click(function () {
+        let value = $('.kamar').html();
+        if (value == 1) {
+          changeIconMinus($(this).attr('aria-type'), true);
+        } else {
+          if (value == 6) {
+            changeIconPlus($(this).attr('aria-type'), false);
+          }
+          $('input[name="room"]').val(minus(parseInt(value)));
+          $('.kamar').html(minus(parseInt(value)));
+          if (minus(parseInt(value)) == 1) {
+            changeIconMinus($(this).attr('aria-type'), true);
+          }
+        }
+      });
+      $('.plus[aria-type="kamar"]').click(function () {
+        let value = $('.kamar').html();
+        if (value == 6) {
+          changeIconPlus($(this).attr('aria-type'), true);
+        } else if (value == 1) {
+          $('input[name="room"]').val(plus(parseInt(value)));
+          $('.kamar').html(plus(parseInt(value)));
+          changeIconMinus($(this).attr('aria-type'), false);
+        } else {
+          $('input[name="room"]').val(plus(parseInt(value)));
+          $('.kamar').html(plus(parseInt(value)));
+          if (plus(parseInt(value)) == 6) {
+            changeIconPlus($(this).attr('aria-type'), true);
+          }
+        }
+      });
+      document.addEventListener('mouseup', function (e) {
+        var container = document.querySelector('.tamuDanKamar');
+        if (!container.contains(e.target)) {
+          $('.select-box').attr('data-selected', 'false');
+          $('.select-box').css('display', 'none');
+        }
+      });
+    </script>
+  </body>
+</html>
